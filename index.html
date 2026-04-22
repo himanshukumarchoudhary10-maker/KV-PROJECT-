@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="loginPage">
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="topNav" aria-label="Top bar">
+      <div class="navInner">
+      </div>
+    </header>
+
+    <main class="shell loginShell">
+      <!-- Login only (home is a separate page) -->
+      <section class="loginModal" id="loginView" aria-labelledby="loginTitle">
+        <button class="modalClose" type="button" aria-label="Close">×</button>
+
+        <div class="modalTop">
+          <h1 class="modalTitle" id="loginTitle">Login</h1>
+          <div class="modePick" aria-label="Login mode">
+            <span class="modeLabel">Setting</span>
+            <select class="modeSelect" id="loginMode" aria-label="Select mode">
+              <option value="HELLO.COM">HELLO.COM</option>
+              <option value="HELLO.IN">HELLO.IN</option>
+              <option value="HELLO.DEPTH">HELLO.DEPTH</option>
+            </select>
+          </div>
+        </div>
+
+        <form class="modalForm" id="loginForm" autocomplete="off">
+          <div class="field" id="passwordField">
+            <input
+              class="modalInput"
+              id="password"
+              name="password"
+              type="password"
+              inputmode="text"
+              placeholder="Password"
+              aria-describedby="loginHint"
+            />
+            <span class="fieldIcon" aria-hidden="true">🔒</span>
+            <button class="peekBtn" type="button" id="togglePw" aria-label="Show password">👁</button>
+          </div>
+
+          <div class="row">
+            <label class="check">
+              <input type="checkbox" id="remember" />
+              <span>Remember me</span>
+            </label>
+          </div>
+
+          <button class="modalBtn" type="submit" id="loginBtn">Login</button>
+
+          <p class="hint muted" id="loginHint" style="text-align:center; margin-top: 10px;">Case-sensitive.</p>
+          <div class="error" id="error" role="alert" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <main class="shell">
+      <section class="home" aria-label="AI + 3D showcase">
+        <header class="homeHeader">
+          <div class="homeTitleWrap">
+            <div class="pill">Showcase</div>
+            <h2 class="homeTitle">Image → Video → 3D (one by one)</h2>
+            <p class="homeSub">
+              Drop outputs into <strong>assets/generated/</strong> (names are in <code>showcase/README.md</code>).
+              This page will show them in order.
+            </p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="ghostBtn" href="./home.html">Back</a>
+            <button class="ghostBtn" id="logoutBtn" type="button">Log out</button>
+          </div>
+        </header>
+
+        <section class="panel" aria-label="1. Image poster">
+          <h3 class="panelTitle">1) Image poster (massive nature background)</h3>
+          <p class="panelText">
+            File: <code>assets/generated/poster_massive_nature_1920x1080.png</code>
+          </p>
+          <figure class="media clean" style="margin-top:12px;">
+            <img
+              class="heroImg"
+              src="./assets/generated/poster_massive_nature_1920x1080.png"
+              onerror="this.onerror=null; this.src='./assets/hero.png';"
+              alt="Poster image output (falls back to hero.png if missing)."
+              loading="eager"
+            />
+          </figure>
+        </section>
+
+        <section class="panel" aria-label="2. AI video">
+          <h3 class="panelTitle">2) AI video (15s)</h3>
+          <figure class="media clean" style="margin-top:12px;">
+            <video id="videoPlayer" class="heroImg" controls playsinline muted style="width: 100%; max-width: 800px;">
+              <source id="videoSource" src="" />
+            </video>
+          </figure>
+          <div class="panelText" id="videoStatus" style="color: rgba(255,255,255,0.72);"></div>
+        </section>
+
+        <section class="panel" aria-label="3. 3D view renders">
+          <h3 class="panelTitle">3) 3D view (3 renders)</h3>
+          <p class="panelText">
+            Files: <code>assets/generated/3d_view_front.png</code>, <code>3d_view_angle.png</code>, <code>3d_view_close.png</code>
+          </p>
+          <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+            <figure class="media clean">
+              <img class="heroImg" src="./assets/generated/3d_view_front.png" onerror="this.onerror=null; this.src='./assets/hero.png';" alt="3D front view" />
+            </figure>
+            <figure class="media clean">
+              <img class="heroImg" src="./assets/generated/3d_view_angle.png" onerror="this.onerror=null; this.src='./assets/hero.png';" alt="3D angle view" />
+            </figure>
+            <figure class="media clean">
+              <img class="heroImg" src="./assets/generated/3d_view_close.png" onerror="this.onerror=null; this.src='./assets/hero.png';" alt="3D close-up view" />
+            </figure>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+    <script>
+      async function loadText(path) {
+        const res = await fetch(path, { cache: "no-store" });
+        if (!res.ok) throw new Error("Failed to load " + path);
+        return await res.text();
+      }
+
+      async function fileExists(path) {
+        try {
+          const res = await fetch(path, { method: "HEAD", cache: "no-store" });
+          return res.ok;
+        } catch {
+          return false;
+        }
+      }
+
+      (async () => {
+        // Video auto-detect
+        const candidates = [
+          "./assets/generated/ai_video.mp4",
+          "./assets/generated/ai_video.webm",
+          "./assets/generated/ai_video.mov",
+        ];
+        const statusEl = document.getElementById("videoStatus");
+        const video = document.getElementById("videoPlayer");
+        const source = document.getElementById("videoSource");
+
+        let found = null;
+        for (const c of candidates) {
+          // HEAD may fail on file://, but works on http.server. We'll also try a normal GET fallback.
+          if (await fileExists(c)) { found = c; break; }
+          try {
+            const r = await fetch(c, { cache: "no-store" });
+            if (r.ok) { found = c; break; }
+          } catch {}
+        }
+
+        if (found) {
+          source.src = found;
+          video.load();
+          statusEl.textContent = "Loaded: " + found.replace("./", "");
+        } else {
+          statusEl.textContent = "No video found yet. Export and save as ai_video.mp4/webm/mov in assets/generated/.";
+          // Hide empty player UI a bit
+          video.style.opacity = "0.7";
+        }
+      })();
+    </script>
+  </body>
+</html>
+

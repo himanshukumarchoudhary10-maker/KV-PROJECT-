@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <main class="shell">
+      <section class="home" id="homeView">
+        <header class="homeHeader">
+          <div class="homeTitleWrap">
+            <div class="pill">Project</div>
+            <h2 class="homeTitle" style="color: #f0f0f0; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">Multifunctional Farming Machine (Concept)</h2>
+            <p class="homeSub" style="color: #ffffff; font-style: italic; line-height: 1.6;">
+              A single interface designed to manage multiple farm operations with a simple, clear “start” flow.
+            </p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="ghostBtn" href="./showcase.html">AI / Video / 3D</a>
+            <button class="ghostBtn" id="logoutBtn" type="button">Log out</button>
+          </div>
+        </header>
+
+        <div class="grid">
+          <figure class="media clean">
+            <img
+              class="heroImg"
+              src="./assets/hero.png"
+              alt="A concept image showing a multifunctional farming machine with a touch interface for potato planting, potato harvesting, crop cutting and bundling, and rice planting."
+              loading="eager"
+            />
+          </figure>
+
+          <section class="panel" aria-label="Explanation">
+            <h3 class="panelTitle">What you’re seeing</h3>
+            <p class="panelText">
+              This image shows a futuristic, multifunctional farming machine operating in a field, controlled by a large touch-screen dashboard.
+              The screen uses a <strong>task-first</strong> layout: you pick the job (Potato Planting, Potato Harvesting, Crop Cutting &amp; Bundling, Rice Planting),
+              then press a big <strong>START</strong> button. It also shows quick status indicators (battery level and simple icons), which are easy to read outdoors.
+            </p>
+
+            <h3 class="panelTitle secondary">Benefits</h3>
+            <div class="featureList" role="list">
+              <div class="feature" role="listitem">
+                <div class="dot" aria-hidden="true"></div>
+                <div>
+                  <div class="featureTitle">Saves time and labor</div>
+                  <div class="featureText">One machine can support multiple operations, reducing switching between tools and machines.</div>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="dot" aria-hidden="true"></div>
+                <div>
+                  <div class="featureTitle">Lower training effort</div>
+                  <div class="featureText">Clear mode cards and a single “Start” action make it easier for new operators to learn quickly.</div>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="dot" aria-hidden="true"></div>
+                <div>
+                  <div class="featureTitle">Fewer mistakes in the field</div>
+                  <div class="featureText">Mode selection + confirmation flow helps prevent running the wrong operation.</div>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="dot" aria-hidden="true"></div>
+                <div>
+                  <div class="featureTitle">Better usability outdoors</div>
+                  <div class="featureText">High-contrast UI, large buttons, and simple icons are more visible in sunlight and dust.</div>
+                </div>
+              </div>
+              <div class="feature" role="listitem">
+                <div class="dot" aria-hidden="true"></div>
+                <div>
+                  <div class="featureTitle">Improved planning and productivity</div>
+                  <div class="featureText">A unified interface makes it easier to track tasks, switch modes at the right time, and keep work consistent.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
