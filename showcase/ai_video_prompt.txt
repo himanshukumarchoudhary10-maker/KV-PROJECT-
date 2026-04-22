@@ -1,0 +1,57 @@
+GOAL
+Create a 15-second realistic cinematic explainer video from the reference image `assets/hero.png`, clearly showing how the multifunctional farming machine works: select a mode → confirm → START → sensors + actuators engage → field operation.
+
+FORMAT
+- Duration: 15s
+- Aspect: 16:9 (1920x1080)
+- Style: realistic, cinematic, HDR, dust particles, sun rays
+- No watermarks, no extra logos, no random text
+- If you use callouts/labels: keep them minimal, clean, and readable (short words), matching the screen perspective.
+
+STORYBOARD (SHOT-BY-SHOT)
+0.0s–2.0s (Shot 1: Establishing)
+- Wide cinematic drone shot over vast golden fields at sunrise.
+- The machine appears driving in the field.
+- Camera: slow push-in, slight tilt down. Volumetric sun rays, subtle lens flare.
+
+2.0s–5.0s (Shot 2: Hero product reveal)
+- Medium hero shot orbiting around the machine (left-to-right).
+- Keep the machine design consistent with the reference image.
+- Add realistic dust from tires and machinery movement.
+- Optional subtle callout near machine (very short): “Multi‑Function”
+
+5.0s–8.0s (Shot 3: Mode select)
+- Close-up on the touch-screen dashboard (match the reference UI layout).
+- UI remains readable: show mode cards (Potato Planting, Potato Harvesting, Crop Cutting & Bundling, Rice Planting).
+- Animate: selection highlight moves across 2–3 cards (smooth glow outline) and lands on one mode.
+- Add subtle reflections + outdoor glare (keep text readable).
+- Minimal label near selection: “Select Mode”
+
+8.0s–10.0s (Shot 4: Confirm + START)
+- The big START button pulses, then gets pressed.
+- Optional micro-confirmation: a short checkmark animation or a 0.3s “Ready” indicator (no long text).
+- Add label near the button: “START”
+
+10.0s–13.0s (Shot 5: How it works inside)
+- Very quick 0.6–0.9s inserts (2–3 cuts max) showing the “working logic”:
+  - Sensor scan (subtle overlay lines / AR style, but realistic): “Sensors”
+  - Actuators engage / mechanism spins up: “Actuators”
+  - Field action (choose the selected mode): planting / harvesting / cutting, realistic motion
+- Keep overlays minimal, aligned to perspective, and do NOT cover the main subject.
+
+13.0s–15.0s (Shot 6: Final hero frame)
+- Pull back to a majestic wide shot with the machine centered.
+- Dramatic sky, epic field depth, cinematic grade.
+- End on a clean hero composition (no extra text).
+
+MASTER PROMPT (paste into Runway/Pika/Kaiber, add your image as reference)
+“A realistic cinematic explainer commercial video of a futuristic multifunctional farming machine in vast golden fields at sunrise, epic nature background, volumetric sun rays, subtle dust particles, HDR lighting, warm highlights and cool shadows, shallow depth of field, gentle lens flare. The machine matches the provided reference image exactly (shape, colors, dashboard). The camera starts with a wide drone establishing shot, then orbits for a hero reveal. Cut to a close-up of the touch-screen dashboard: mode cards for Potato Planting, Potato Harvesting, Crop Cutting & Bundling, Rice Planting; a selection highlight chooses one mode, then the START button pulses and is pressed. Immediately show how it works: brief realistic inserts of sensors scanning and actuators engaging, then the machine performs the selected field operation (planting/harvesting/cutting). Use minimal perspective-aligned callouts only: ‘Select Mode’, ‘START’, ‘Sensors’, ‘Actuators’. No extra logos, no watermarks, no random text.”
+
+NEGATIVE PROMPT
+cartoon, anime, lowres, blurry, overexposed UI, unreadable text, long paragraphs, subtitles, extra text overlays, random words, watermark, deformed machinery, flicker, jitter, morphing, inconsistent dashboard, duplicated wheels, distorted perspective
+
+NOTES
+- If your tool supports it, set: motion strength medium, camera motion low-to-medium, consistency high.
+- If the UI text becomes messy, reduce “motion strength” and increase “reference strength”.
+- If overlays look fake, reduce overlay intensity and keep only 1–2 labels (START + Sensors).
+

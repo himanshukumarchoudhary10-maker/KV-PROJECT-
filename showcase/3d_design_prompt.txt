@@ -1,0 +1,27 @@
+GOAL
+Create 3 separate 3D-view renders based on `assets/hero.png`:
+1) Front view, 2) 3/4 angle view, 3) Close-up detail.
+
+OUTPUT
+- 1920x1080 PNG
+- Realistic materials, outdoor lighting, epic nature mood (vast fields, sun rays)
+- No extra text, no watermark
+
+RENDER PROMPTS (use in a 3D-capable generator, or as guidance for Blender)
+
+1) 3D VIEW FRONT (save as `assets/generated/3d_view_front.png`)
+“Realistic 3D render of a futuristic multifunctional farming machine matching the provided reference image, front view, centered, cinematic outdoor sunrise lighting, golden field background with depth, volumetric sun rays, subtle dust, HDR, sharp details, realistic metal and plastic materials, no text, no watermark.”
+
+2) 3D VIEW ANGLE (save as `assets/generated/3d_view_angle.png`)
+“Realistic 3D render of the same machine, 3/4 front-left angle view, slight low camera angle, cinematic lighting, golden field background, shallow depth of field, crisp edges, realistic reflections, no text, no watermark.”
+
+3) 3D CLOSE-UP (save as `assets/generated/3d_view_close.png`)
+“Realistic 3D close-up render focusing on the dashboard + key mechanical components, readable screen, natural reflections and glare, dust particles, cinematic grade, no text overlays, no watermark.”
+
+BLENDER QUICK WORKFLOW (manual)
+- Model (rough): start from simple shapes for the chassis + attachments; keep proportions from the reference.
+- Materials: metal (roughness 0.25–0.35), painted panels (roughness 0.35–0.5), rubber tires (roughness 0.75).
+- Lighting: HDRI + Sun light with warm color (sunrise), add slight volumetrics for rays.
+- Camera: 35mm for hero, 50–70mm for close-up.
+- Background: plane with field texture + distant haze, or a backplate with matched perspective.
+
